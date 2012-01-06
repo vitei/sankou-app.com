@@ -1,0 +1,250 @@
+<html>
+<head>
+<style type="text/css">
+
+body {
+	font-family: Arial;
+	padding: 0;
+	margin: 0;
+	border-color: #f00;
+}
+
+.menu {
+	padding: 0;
+	margin: 0;
+}
+
+table {
+	background-color: #fff;
+	color: #646464;
+	margin-left: auto;
+	margin-bottom: auto;
+	margin-right: auto;
+	margin-top: 5%;
+	text-align: left;
+	width: 100%;
+}
+
+td {
+}
+
+h1 {
+	padding: 0;
+	margin: 0;
+	font-size: 3em;
+	border-spacing: 0px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	margin-bottom: 40px;
+}
+
+.icon {
+	float: left;
+}
+
+p {
+	font-weight: bold;
+	font-size: small;
+}
+
+ul {
+	font-weight: bold;
+	font-size: small;
+}
+
+.menu ul {
+	font-size: 1em;
+	list-style-type: none;
+	
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 1em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+		
+	background: -moz-linear-gradient(left, #fff, #bbb);
+	background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#bbb));
+}
+
+.menu li {
+	float:right;
+
+}
+
+.menu a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	padding-right: 10px;
+	padding-left: 10px;
+	display: block;
+	outline: none;
+}
+
+.menu a:hover {
+	color: black;
+}
+
+
+.footer {
+	width: 100%;
+	text-align: center;
+	font-size: xx-small;
+	padding-top: 5em;
+	height: 0.5em;
+	color: #aaa;
+	
+
+}
+
+.shadow {
+	color: #888;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Sankou App</title>
+</head>
+
+
+
+<script type="text/javascript">
+
+var images = new Array();
+var imgnum = 0;
+
+images[0] = "/sankou-screen1.png";
+images[1] = "/sankou-screen2.png";
+images[2] = "/sankou-screen3.png";
+
+
+var alpha=0.0;
+var currImage=0;
+var fadeSpeed=32;
+
+function setAlpha(img,alpha)
+{
+	img.style.opacity = alpha;
+	img.style.filter = 'alpha(opacity = '+(alpha*100)+')';
+}
+
+function fadeImages()
+{
+	currImage++;
+	
+	if (currImage >= images.length)
+		currImage = 0;
+	
+	var img2 = document.getElementById('img2')
+	img2.src = images[currImage];
+		
+	alpha = 0.0;
+	setAlpha(img2,alpha);
+	
+	
+	img2.onload = fade;
+}
+
+function fade()
+{
+	alpha += (1.0/fadeSpeed);
+	
+	var img1 = document.getElementById('img1')
+	var img2 = document.getElementById('img2')
+	if (alpha < 1.0)
+	{
+		var func = function() {fade();}
+		setTimeout(func,fadeSpeed);	
+		setAlpha(img2,alpha);
+		
+		img2.style.display = "inline";
+		
+	}else
+	{
+		alpha = 1.0;	
+		img1.src = img2.src;
+		setAlpha(img2,0.0);
+		
+		img2.style.display = "none";
+
+		fadeWait();				
+	}
+	
+	
+}
+
+function fadeWait()
+{
+	var func = function() {fadeImages();}
+	setTimeout(func,6000);	
+}
+
+
+
+</script>
+
+
+<body onload="fadeWait();">
+<div class="menu">
+<ul>
+<li><a href="mailto:support@sankou-app.com">support</a></li>
+<li><a href="/">about</a></li>
+</ul>
+</div>
+
+
+<table>
+
+
+<tr>
+<td>
+<div style="margin:auto; width:278px; height:475px;">
+<img style="position:absolute;" id="img1" src="sankou-screen1.png"  />
+<img style="position:absolute;display:none;" id="img2" src="sankou-screen1.png" />
+</div>
+<p align="center" class="shadow" ><i>Designed for iOS 5</i></p>
+</td>
+<td width="50%">
+<img class="icon" src="sankou114-icon.png">
+<h1>
+Sankou
+</h1>
+<p style="clear:both;">
+A simple to use yet powerful GPS trekking recorder.
+</p>
+<p>
+★★★ FREE FOR LIMITED TIME ONLY ★★★ 
+</p>
+<p>
+Features: 
+</p>
+<p>
+<ul>
+<li>Intelligent battery saving - uses GPS only when moving 
+<li>Automatic elevation map generator </li>
+<li>Easy to read Altitude, Low, High, Ascent, Descent display</li> 
+<li>Built in compass with bearing readout </li>
+<li>Built in camera and photo viewer </li>
+<li>Automatic photo importing - take photos from any app</li> 
+<li>Export to Google Earth (KMZ and KML) </li>
+<li>Export via Email or Dropbox </li>
+<li>Simple to use interface, even with one hand</li>
+</ul>
+
+<a href="http://itunes.apple.com/us/app/sankou/id493259790?ls=1&mt=8"><img src="appstore300.png"></a>
+
+</td>
+</p>
+</td>
+</tr>
+
+
+
+</table>
+
+<div class="footer">© 2012 Vitei Inc.</div>
+
+</body>
+
+</html>
