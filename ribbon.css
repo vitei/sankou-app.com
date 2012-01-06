@@ -1,7 +1,9 @@
+/*
 @font-face {
   font-family: Collegiate;
   src: url("Collegiate.ttf");
 }
+*/
 
 .ribbon-holder {
   position: absolute;
@@ -24,7 +26,9 @@
 }
 
 .ribbon {
+/*
   font-family: Collegiate, sans-serif;
+  */
   letter-spacing: -.1px;
   opacity: 0.95;
 

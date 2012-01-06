@@ -13,6 +13,7 @@
 <script type="text/javascript">
 
 var images = new Array();
+var imgnum = 0;
 
 images[0] = "/sankou-screen1.png";
 images[1] = "/sankou-screen2.png";
@@ -20,7 +21,7 @@ images[2] = "/sankou-screen3.png";
 
 
 var alpha=0.0;
-var currImage=1;
+var currImage=0;
 var fadeSpeed=32;
 
 function setAlpha(img,alpha)
@@ -106,8 +107,8 @@ function fadeWait()
 <tr>
 <td>
 <div style="margin:auto; width:278px; height:475px;">
-<img class="iphone" style="position:absolute;" id="img1" src="sankou-screen2.png"  />
-<img class="iphone" style="position:absolute;display:none;" id="img2" src="sankou-screen2.png" />
+<img class="iphone" style="position:absolute;" id="img1" src="sankou-screen1.png"  />
+<img class="iphone" style="position:absolute;display:none;" id="img2" src="sankou-screen1.png" />
 </div>
 <p align="center" class="shadow" ><i>Designed for iOS 5</i></p>
 </td>
@@ -122,13 +123,12 @@ Features:
 </p>
 <p>
 <ul>
-<li>Intelligent battery saving / speed based GPS readings   
-<li>Automatic, scalable elevation map </li>
-<li>Easy to read Altitude - Current/High/Low/Gain</li> 
+<li>Intelligent battery saving - uses GPS only while moving 
+<li>Automatic elevation map </li>
+<li>Easy to read Altitude, Lowest, Highest and Elevation gain</li> 
 <li>Built in compass with bearing readout </li>
 <li>Built in camera and photo viewer </li>
 <li>Automatic photo importing - take photos from any app</li> 
-<li>Unlimited saved routes</li>
 <li>KMZ / KML export via Email or Dropbox</li>
 <li>Simple to use interface, even one-handed</li>
 <li>English / Japanese language</li>
