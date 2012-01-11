@@ -11,6 +11,25 @@ body {
 	margin: 0;
 }
 
+a {
+	text-decoration: none;
+	outline: none;
+	color: #444;
+}
+
+
+/*
+a:hover{
+	color: #44f;
+}
+*/
+
+.email a:hover{
+	color: #44f;
+}
+
+
+
 table {
 	background-color: #fff;
 	color: #646464;
@@ -31,6 +50,14 @@ h1 {
 	margin: 0;
 	font-size: 3em;
 			
+}
+
+
+.support{
+	text-align: center;
+	margin:auto;
+	
+	padding-top: 3em;
 }
 
 .icon {
